@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	   <link rel="stylesheet" type="text/css" href="style2.css">
+	
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+			
+
+  <div class="hr-text">
+    <h1>サラダ</h1>
+  </div>
+	
+	
+	<div class="parent" style="text-align: center;">
+		
+<a href="#" id="キャベツ"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/cabbage.png" style="height: 100px;"><br>キャベツ</div></a>
+<a href="#" id="レタス"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/lettuce.png" style="height: 100px;"><br>レタス</div></a>
+<a href="#" id="ニンジン"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/carrots.png" style="height: 100px;"><br>ニンジン</div></a>
+<a href="#" id="キュウリ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/cucumber.png" style="height: 100px;"><br>キュウリ</div></a>
+<a href="#" id="トマト"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/tomatoes.png" style="height: 100px;"><br>トマト</div></a>
+
+<a href="#" id="大根"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/daikonradish.png" style="height: 100px;"><br>大根</div></a>
+<a href="#" id="ワカメ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/wakameseaweed.png" style="height: 100px;"><br>ワカメ</div></a>
+<a href="#" id="枝豆"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/edamame.png" style="height: 100px;"><br>枝豆</div></a>
+<a href="#" id="もやし"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/beansprouts.png" style="height: 100px;"><br>もやし</div></a>
+<a href="#" id="えのき茸"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/enokimushrooms.png" style="height: 100px;"><br>えのき茸</div></a>
+
+<a href="#" id="豆腐"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/tofu.png" style="height: 100px;"><br>豆腐</div></a>
+<a href="#" id="炙りマグロ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/searedtuna.png" style="height: 100px;"><br>炙りマグロ</div></a>
+<a href="#" id="ゴマ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/sesameseeds.png" style="height: 100px;"><br>ゴマ</div></a>
+<a href="#" id="ポン酢ドレッシング"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/ponzudressing.png" style="height: 100px;"><br>ポン酢ドレッシング</div></a>
+<a href="#" id="味噌ドレッシング"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/misodressing.png" style="height: 100px;"><br>味噌ドレッシング</div></a>
+
+<a href="index.html" id="トップページ"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/home.png" style="height: 100px;"><br>トップページ</div></a>
+<a href="#" id="戻る"  onclick='goBack()'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/back.png" style="height: 100px;"><br>戻る</div></a>
+<a href="keyboard.html" id=""  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/keyboard.png" style="height: 100px;"><br>キーボード</div></a>
+<a href="#" id="はい"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/yes.png" style="height: 100px;"><br>はい</div></a>
+<a href="#" id="いや"   onclick="updateResult(this.id)"> <div class="control" style="border-style: solid; border-color: black;"><img src="images/x.png" style="height: 100px;"><br>いや</div></a>
+
+	</div>
+	
+	<script>		
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+	  msg.rate = 0.9;
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

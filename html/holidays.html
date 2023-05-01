@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	   <link rel="stylesheet" type="text/css" href="style2.css">
+	
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+			
+
+  <div class="hr-text">
+    <h1>祝日</h1>
+  </div>
+	
+	
+	<div class="parent" style="text-align: center;">
+		
+<a href="#" id="元旦"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/newyearsday.png" style="height: 100px;"><br>元旦</div></a>
+<a href="#" id="成人の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/comingofageday.png" style="height: 100px;"><br>成人の日</div></a>
+<a href="#" id="建国記念の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/nationalfoundationday.png" style="height: 100px;"><br>建国記念の日</div></a>
+<a href="#" id="春分の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/vernalequinoxday.png" style="height: 100px;"><br>春分の日</div></a>
+<a href="#" id="昭和の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/showaday.png" style="height: 100px;"><br>昭和の日</div></a>
+
+<a href="#" id="憲法記念日"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/constitutionmemorialday.png" style="height: 100px;"><br>憲法記念日</div></a>
+<a href="#" id="みどりの日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/greeneryday.png" style="height: 100px;"><br>みどりの日</div></a>
+<a href="#" id="こどもの日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/childrensday.png" style="height: 100px;"><br>こどもの日</div></a>
+<a href="#" id="海の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/marineday.png" style="height: 100px;"><br>海の日</div></a>
+<a href="#" id="山の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/mountainday.png" style="height: 100px;"><br>山の日</div></a>
+
+<a href="#" id="敬老の日"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/respectfortheagedday.png" style="height: 100px;"><br>敬老の日</div></a>
+<a href="#" id="秋分の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/autumnalequinoxday.png" style="height: 100px;"><br>秋分の日</div></a>
+<a href="#" id="スポーツの日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/healthandsportsday.png" style="height: 100px;"><br>スポーツの日</div></a>
+<a href="#" id="文化の日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/cultureday.png" style="height: 100px;"><br>文化の日</div></a>
+<a href="#" id="天皇誕生日"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/emperorsbirthday.png" style="height: 100px;"><br>天皇誕生日</div></a>
+
+<a href="index.html" id="トップページ"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/home.png" style="height: 100px;"><br>トップページ</div></a>
+<a href="#" id="戻る"  onclick='goBack()'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/back.png" style="height: 100px;"><br>戻る</div></a>
+<a href="keyboard.html" id=""  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/keyboard.png" style="height: 100px;"><br>キーボード</div></a>
+<a href="#" id="はい"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/yes.png" style="height: 100px;"><br>はい</div></a>
+<a href="#" id="いや"   onclick="updateResult(this.id)"> <div class="control" style="border-style: solid; border-color: black;"><img src="images/x.png" style="height: 100px;"><br>いや</div></a>
+
+	</div>
+	
+	<script>		
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+	  msg.rate = 0.9;
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

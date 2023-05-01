@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	   <link rel="stylesheet" type="text/css" href="style2.css">
+	
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+			
+
+  <div class="hr-text">
+    <h1>朝食</h1>
+  </div>
+	
+	
+	<div class="parent" style="text-align: center;">
+		
+<a href="#" id="ご飯"  onclick='updateResult(this.id)'><div class="child" style="border-style: solid; border-color: black;"><img src="images/rice.png"" style="height: 100px;"><br>ご飯</div></a>
+<a href="#" id="味噌汁"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/misosoup.png"" style="height: 100px;"><br>味噌汁</div></a>
+<a href="#" id="焼き魚"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/grilledfish.png"" style="height: 100px;"><br>焼き魚</div></a>
+<a href="#" id="玉子焼き"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/tamagoyaki.png"" style="height: 100px;"><br>玉子焼き</div></a>
+<a href="#" id="納豆"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/natto.png"" style="height: 100px;"><br>納豆</div></a>
+
+<a href="#" id="漬物"  onclick='updateResult(this.id)'><div class="child" style="border-style: solid; border-color: black;"><img src="images/tsukemono.png"" style="height: 100px;"><br>漬物</div></a>
+<a href="#" id="海苔"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/nori.png"" style="height: 100px;"><br>海苔</div></a>
+<a href="#" id="豆腐"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/tofu.png"" style="height: 100px;"><br>豆腐</div></a>
+<a href="#" id="焼きそば"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/yakizakana.png"" style="height: 100px;"><br>焼きそば</div></a>
+<a href="#" id="おにぎり"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/onigiri.png"" style="height: 100px;"><br>おにぎり</div></a>
+
+<a href="#" id="お茶漬け"  onclick='updateResult(this.id)'><div class="child" style="border-style: solid; border-color: black;"><img src="images/ochazuke.png"" style="height: 100px;"><br>お茶漬け</div></a>
+<a href="#" id="かつお節"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/bonito_flakes.png"" style="height: 100px;"><br>かつお節</div></a>
+<a href="#" id="お好み焼き"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/okonomiyaki.png"" style="height: 100px;"><br>お好み焼き</div></a>
+<a href="#" id="焼きおにぎり"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/yaki-onigiri.png"" style="height: 100px;"><br>焼きおにぎり</div></a>
+<a href="#" id="おかず"  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="images/gohannotomo.png"" style="height: 100px;"><br>おかず</div></a>
+
+<a href="index.html" id="トップページ"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/home.png" style="height: 100px;"><br>トップページ</div></a>
+<a href="#" id="戻る"  onclick='goBack()'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/back.png" style="height: 100px;"><br>戻る</div></a>
+<a href="keyboard.html" id=""  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/keyboard.png" style="height: 100px;"><br>キーボード</div></a>
+<a href="#" id="はい"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/yes.png" style="height: 100px;"><br>はい</div></a>
+<a href="#" id="いや"   onclick="updateResult(this.id)"> <div class="control" style="border-style: solid; border-color: black;"><img src="images/x.png" style="height: 100px;"><br>いや</div></a>
+
+	</div>
+	
+	<script>		
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+	  msg.rate = 0.9;
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

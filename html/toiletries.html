@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	   <link rel="stylesheet" type="text/css" href="style2.css">
+	
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+			
+
+  <div class="hr-text">
+    <h1>洗面用具</h1>
+  </div>
+	
+	
+	<div class="parent" style="text-align: center;">
+		
+<a href="#" id="石鹸"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/soap.png"" style="height: 100px;"><br>石鹸</div></a>
+<a href="#" id="歯ブラシ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/toothbrush.png"" style="height: 100px;"><br>歯ブラシ</div></a>
+<a href="#" id="歯磨き粉"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/toothpaste.png"" style="height: 100px;"><br>歯磨き粉</div></a>
+<a href="#" id="デオドラント"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/deodorant.png"" style="height: 100px;"><br>デオドラント</div></a>
+<a href="#" id="シャンプー"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/shampoo.png"" style="height: 100px;"><br>シャンプー</div></a>
+
+<a href="f#" id="コンディショナー"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/conditioner.png"" style="height: 100px;"><br>コンディショナー</div></a>
+<a href="#" id="化粧品"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/makeup.png"" style="height: 100px;"><br>化粧品</div></a>
+<a href="#" id="カミソリ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/razor.png"" style="height: 100px;"><br>カミソリ</div></a>
+<a href="#" id="シェービングフォーム"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/shavingfoam.png"" style="height: 100px;"><br>シェービングフォーム</div></a>
+<a href="#" id="アフターシェーブ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/aftershave.png"" style="height: 100px;"><br>アフターシェーブ</div></a>
+
+<a href="#" id="トイレットペーパー"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/toiletroll.png"" style="height: 100px;"><br>トイレットペーパー</div></a>
+<a href="#" id="サニタリー用品"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/sanitaryitems.png"" style="height: 100px;"><br>サニタリー用品</div></a>
+<a href="#" id="ヘアードライヤー"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/hairdryer.png"" style="height: 100px;"><br>ヘアードライヤー</div></a>
+<a href="#" id="くし"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/comb.png"" style="height: 100px;"><br>くし</div></a>
+<a href="#" id="ブラシ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/brush.png"" style="height: 100px;"><br>ブラシ</div></a>
+
+<a href="index.html" id="トップページ"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/home.png" style="height: 100px;"><br>トップページ</div></a>
+<a href="#" id="戻る"  onclick='goBack()'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/back.png" style="height: 100px;"><br>戻る</div></a>
+<a href="keyboard.html" id=""  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/keyboard.png" style="height: 100px;"><br>キーボード</div></a>
+<a href="#" id="はい"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/yes.png" style="height: 100px;"><br>はい</div></a>
+<a href="#" id="いや"   onclick="updateResult(this.id)"> <div class="control" style="border-style: solid; border-color: black;"><img src="images/x.png" style="height: 100px;"><br>いや</div></a>
+
+	</div>
+	
+	<script>		
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+	  msg.rate = 0.9;
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

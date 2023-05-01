@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	   <link rel="stylesheet" type="text/css" href="style2.css">
+	
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+			
+
+  <div class="hr-text">
+    <h1>仕事</h1>
+  </div>
+	
+	
+	<div class="parent" style="text-align: center;">
+		
+<a href="#" id="運転手"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/driver.png" style="height: 100px;"><br>運転手</div></a>
+<a href="#" id="介護士"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/pa.png" style="height: 100px;"><br>介護士</div></a>
+<a href="#" id="清掃員"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/cleaner.png" style="height: 100px;"><br>清掃員</div></a>
+<a href="#" id="医者"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/doctor.png" style="height: 100px;"><br>医者</div></a>
+<a href="#" id="SLT"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/slt.png" style="height: 100px;"><br>SLT</div></a>
+
+<a href="#" id="歯科医師"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/dentist.png" style="height: 100px;"><br>歯科医師</div></a>
+<a href="#" id="看護師"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/nurse.png" style="height: 100px;"><br>看護師</div></a>
+<a href="#" id="警察官"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/policeofficer.png" style="height: 100px;"><br>警察官</div></a>
+<a href="#" id="郵便局員"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/postperson.png" style="height: 100px;"><br>郵便局員</div></a>
+<a href="#" id="パイロット"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/pil作業療法士.png" style="height: 100px;"><br>パイロット</div></a>
+
+<a href="#" id="修理工"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/handyperson.png" style="height: 100px;"><br>修理工</div></a>
+<a href="#" id="作業療法士"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/作業療法士.png" style="height: 100px;"><br>作業療法士</div></a>
+<a href="#" id="理学療法士"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/physio.png" style="height: 100px;"><br>理学療法士</div></a>
+<a href="#" id="整備士"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/mechanic.png" style="height: 100px;"><br>整備士</div></a>
+<a href="#" id="管理人"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/caretaker.png" style="height: 100px;"><br>管理人</div></a>
+
+<a href="index.html" id="トップページ"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/home.png" style="height: 100px;"><br>トップページ</div></a>
+<a href="#" id="戻る"  onclick='goBack()'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/back.png" style="height: 100px;"><br>戻る</div></a>
+<a href="keyboard.html" id=""  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/keyboard.png" style="height: 100px;"><br>キーボード</div></a>
+<a href="#" id="はい"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/yes.png" style="height: 100px;"><br>はい</div></a>
+<a href="#" id="いや"   onclick="updateResult(this.id)"> <div class="control" style="border-style: solid; border-color: black;"><img src="images/x.png" style="height: 100px;"><br>いや</div></a>
+
+	</div>
+	
+	<script>		
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+	  msg.rate = 0.9;
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

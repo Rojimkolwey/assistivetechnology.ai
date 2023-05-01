@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+	   <link rel='stylesheet' type='text/css' href='style2.css'>
+
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+
+
+  <div class='hr-text'>
+    <h1>page_name</h1>
+  </div>
+
+
+	<div class='parent' style='text-align: center;'>
+
+<a href='href1' id='id1'  onclick='updateResult(this.id)'><div class='child' style='border-style: solid; border-color: black;'><img src='images/image1.png' style='height: 100px;'><br>id1</div></a>
+<a href='href2' id='id2'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image2.png' style='height: 100px;'><br>id2</div></a>
+<a href='href3' id='id3'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image3.png' style='height: 100px;'><br>id3</div></a>
+<a href='href4' id='id4'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image4.png' style='height: 100px;'><br>id4</div></a>
+<a href='href5' id='id5'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image5.png' style='height: 100px;'><br>id5</div></a>
+
+<a href='href6' id='id6'  onclick='updateResult(this.id)'><div class='child' style='border-style: solid; border-color: black;'><img src='images/image6.png' style='height: 100px;'><br>id6</div></a>
+<a href='href7' id='id7'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image7.png' style='height: 100px;'><br>id7</div></a>
+<a href='href8' id='id8'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image8.png' style='height: 100px;'><br>id8</div></a>
+<a href='href9' id='id9'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image9.png' style='height: 100px;'><br>id9</div></a>
+<a href='href10' id='id10'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image10.png' style='height: 100px;'><br>id10</div></a>
+
+<a href='href11' id='id11'  onclick='updateResult(this.id)'><div class='child' style='border-style: solid; border-color: black;'><img src='images/image11.png' style='height: 100px;'><br>id11</div></a>
+<a href='href12' id='id12'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image12.png' style='height: 100px;'><br>id12</div></a>
+<a href='href13' id='id13'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image13.png' style='height: 100px;'><br>id13</div></a>
+<a href='href14' id='id14'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image14.png' style='height: 100px;'><br>id14</div></a>
+<a href='href15' id='id15'  onclick='updateResult(this.id)'> <div class='child' style='border-style: solid; border-color: black;'><img src='images/image15.png' style='height: 100px;'><br>id15</div></a>
+
+<a href='index.html' id='トップページ'  onclick='updateResult(this.id)'> <div class='control' style='border-style: solid; border-color: black;'><img src='images/home.png' style='height: 100px;'><br>トップページ</div></a>
+<a href='#' id='戻る'  onclick='goBack()'> <div class='control' style='border-style: solid; border-color: black;'><img src='images/back.png' style='height: 100px;'><br>戻る</div></a>
+<a href='keyboard.html' id=''  onclick='updateResult(this.id)'> <div class='control' style='border-style: solid; border-color: black;'><img src='images/keyboard.png' style='height: 100px;'><br>キーボード</div></a>
+<a href='#' id='はい'  onclick='updateResult(this.id)'> <div class='control' style='border-style: solid; border-color: black;'><img src='images/yes.png' style='height: 100px;'><br>はい</div></a>
+<a href='#' id='いや'   onclick='updateResult(this.id)'> <div class='control' style='border-style: solid; border-color: black;'><img src='images/x.png' style='height: 100px;'><br>いや</div></a>
+
+	</div>
+
+	<script>
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

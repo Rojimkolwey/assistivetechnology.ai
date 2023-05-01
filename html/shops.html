@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	   <link rel="stylesheet" type="text/css" href="style2.css">
+	
+	   <div align='center' style='vertical-align: middle>;'
+
+	    <form>
+	      <input type='hidden' id='result' name='result' readonly style='font-size: 3em; width: 50%; height: 80px; padding-left:10px; text-align: center;vertical-align: middle;'>
+	      <a href='' onclick='alert(result.value)';><input type='hidden' src='images/speak.png' alt='Submit' width='80' height='80' style='border-style: solid; vertical-align: middle;'></a>
+	    </form>
+	</div>
+			
+
+  <div class="hr-text">
+    <h1>お店</h1>
+  </div>
+	
+	
+	<div class="parent" style="text-align: center;">
+		
+<a href="#" id="スーパーマーケット"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/supermarket.png" style="height: 100px;"><br>スーパーマーケット</div></a>
+<a href="#" id="肉屋"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/butchers.png" style="height: 100px;"><br>肉屋</div></a>
+<a href="#" id="ショッピングセンター"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/shoppingcentre.png" style="height: 100px;"><br>ショッピングセンター</div></a>
+<a href="#" id="ベーカリー"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/bakers.png" style="height: 100px;"><br>ベーカリー</div></a>
+<a href="#" id="八百屋"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/Vegshop.png" style="height: 100px;"><br>八百屋</div></a>
+
+<a href="#" id="デパート"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/departmentstore.png" style="height: 100px;"><br>デパート</div></a>
+<a href="#" id="洋服店"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/clothesshop.png" style="height: 100px;"><br>洋服店</div></a>
+<a href="#" id="ミュージックショップ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/musicshop.png" style="height: 100px;"><br>ミュージックショップ</div></a>
+<a href="#" id="マーケット"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/market.png" style="height: 100px;"><br>マーケット</div></a>
+<a href="#" id="コーヒーショップ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/coffeeshop.png" style="height: 100px;"><br>コーヒーショップ</div></a>
+
+<a href="#" id="ドライブスルー"  onclick='updateResult(this.id)'><div class="child" style="border-style: dashed; border-color: black;"><img src="images/drivethrough.png" style="height: 100px;"><br>ドライブスルー</div></a>
+<a href="#" id="薬局"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/pharmacy.png" style="height: 100px;"><br>薬局</div></a>
+<a href="#" id=""  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="" style="height: 100px;"><br></div></a>
+<a href="#" id=""  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="" style="height: 100px;"><br></div></a>
+<a href="#" id=""  onclick='updateResult(this.id)'> <div class="child" style="border-style: solid; border-color: black;"><img src="" style="height: 100px;"><br></div></a>
+
+<a href="index.html" id="トップページ"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/home.png" style="height: 100px;"><br>トップページ</div></a>
+<a href="#" id="戻る"  onclick='goBack()'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/back.png" style="height: 100px;"><br>戻る</div></a>
+<a href="keyboard.html" id=""  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/keyboard.png" style="height: 100px;"><br>キーボード</div></a>
+<a href="#" id="はい"  onclick='updateResult(this.id)'> <div class="control" style="border-style: solid; border-color: black;"><img src="images/yes.png" style="height: 100px;"><br>はい</div></a>
+<a href="#" id="いや"   onclick="updateResult(this.id)"> <div class="control" style="border-style: solid; border-color: black;"><img src="images/x.png" style="height: 100px;"><br>いや</div></a>
+
+	</div>
+	
+	<script>		
+	  function updateResult(id) {
+	    // Get the form field
+	    var resultField = document.getElementById('result');
+
+	    // Set the value of the form field to the id of the clicked button
+	    resultField.value = id;
+
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = id;
+	  msg.lang = 'ja';
+	  msg.rate = 0.9;
+
+      window.speechSynthesis.speak(msg);
+	    }
+
+      document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+		  </body>
+		</html>

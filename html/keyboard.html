@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	  
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	 <script src="jquery-3.3.1.min.js"></script>
+	  
+    <style>
+
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        
+      .container {
+        display: grid;
+        grid-template-columns: repeat(14, 97px);
+        grid-template-rows: repeat(6, 110px);
+        grid-row-gap: 1px;
+        grid-column-gap: 5px;
+        border-style: solid
+        max-width: 1400px;		
+        margin-left: 20px;
+
+      }
+
+
+	  .result_bar {}
+
+ 
+       .button {
+        width: 100px;
+        height: 110px;
+        margin: 1px;
+      }
+ 
+    </style>
+  </head>
+  <body>
+  
+  
+   <div class="row">
+         <input autocomplete="on" id="input" type="text" onkeyup="textUpdated(this)" style="width: 1100px; font-size:3em; height: 80px;  margin-left: 20px;" >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="speak()" style="width:110px; height: 105px;  border-style: solid;"><img src="images/speak.png" style="height: 100px; width: 100px;"></button>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button onclick="clearInput()" style="width:110px; height: 105px; border-style: solid;"><img src="images/clear.png" style="height: 100px; width: 100px;"></button>
+    </div>
+  
+<br>
+	  
+    <div class="container">
+      <img class="button" src="images/WA.png" alt="Image Button 1" onclick='updateResult(this.id)' id='わ'>
+	  <img class="button" src="images/RA.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ら'>
+	  <img class="button" src="images/YA.png" alt="Image Button 1" onclick='updateResult(this.id)' id='や'>
+	  <img class="button" src="images/MA.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ま'>
+	  <img class="button" src="images/HA.png" alt="Image Button 1" onclick='updateResult(this.id)' id='は'>
+      <img class="button" src="images/NA.png" alt="Image Button 1" onclick='updateResult(this.id)' id='な'>
+      <img class="button" src="images/TA.png" alt="Image Button 2" onclick='updateResult(this.id)' id='た'>
+	  <img class="button" src="images/SA.png" alt="Image Button 3" onclick='updateResult(this.id)' id='さ'>
+	  <img class="button" src="images/KA.png" alt="Image Button 4" onclick='updateResult(this.id)' id='か'>
+	  <img class="button" src="images/A.png" alt="Image Button 5" onclick='updateResult(this.id)' id='あ'>	  
+<!--       <img style="width: 108px;" > -->
+      <img class="button" src="images/n1.png" alt="Image Button 2" onclick='updateResult(this.id)' id='1'>
+	  <img class="button" src="images/n2.png" alt="Image Button 3" onclick='updateResult(this.id)' id='2'>
+	  <img class="button" src="images/n3.png" alt="Image Button 4" onclick='updateResult(this.id)' id='3'>
+	  
+      <img style="width: 108px;" >
+	  <img class="button" src="images/RI.png" alt="Image Button 1" onclick='updateResult(this.id)' id='り'>
+      <img style="width: 108px;" >
+	  <img class="button" src="images/MI.png" alt="Image Button 1" onclick='updateResult(this.id)' id='み'>
+	  <img class="button" src="images/HI.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ひ'>
+      <img class="button" src="images/NI.png" alt="Image Button 1" onclick='updateResult(this.id)' id='に'>
+      <img class="button" src="images/CHI.png" alt="Image Button 2" onclick='updateResult(this.id)' id='ち'>
+	  <img class="button" src="images/SHI.png" alt="Image Button 3" onclick='updateResult(this.id)' id='し'>
+	  <img class="button" src="images/KI.png" alt="Image Button 4" onclick='updateResult(this.id)' id='き'>
+	  <img class="button" src="images/I.png" alt="Image Button 5" onclick='updateResult(this.id)' id='い'>	  
+      <img style="width: 108px;" >
+      <img class="button" src="images/n4.png" alt="Image Button 2" onclick='updateResult(this.id)' id='4'>
+	  <img class="button" src="images/n5.png" alt="Image Button 3" onclick='updateResult(this.id)' id='5'>
+	  <img class="button" src="images/n6.png" alt="Image Button 4" onclick='updateResult(this.id)' id='6'>
+<img style="width: 108px;" >
+      <img class="button" src="images/O-WO.png" alt="Image Button 1" onclick='updateResult(this.id)' id=''>
+	  <img class="button" src="images/RU.png" alt="Image Button 1" onclick='updateResult(this.id)' id='る'>
+	  <img class="button" src="images/YU.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ゆ'>
+	  <img class="button" src="images/MU.png" alt="Image Button 1" onclick='updateResult(this.id)' id='む'>
+	  <img class="button" src="images/HU-FU.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ふ'>
+      <img class="button" src="images/NU.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ぬ'>
+      <img class="button" src="images/TSU.png" alt="Image Button 2" onclick='updateResult(this.id)' id='つ'>
+	  <img class="button" src="images/SU.png" alt="Image Button 3" onclick='updateResult(this.id)' id='す'>
+	  <img class="button" src="images/KU.png" alt="Image Button 4" onclick='updateResult(this.id)' id='く'>
+	  <img class="button" src="images/U.png" alt="Image Button 5" onclick='updateResult(this.id)' id='う'>	  
+<!--       <img style="width: 108px;" > -->
+      <img class="button" src="images/n7.png" alt="Image Button 2" onclick='updateResult(this.id)' id='7'>
+	  <img class="button" src="images/n8.png" alt="Image Button 3" onclick='updateResult(this.id)' id='8'>
+	  <img class="button" src="images/n9.png" alt="Image Button 4" onclick='updateResult(this.id)' id='9'>
+ <img style="width: 108px;" >
+      <img style="width: 108px;" >
+	  <img class="button" src="images/RE.png" alt="Image Button 1" onclick='updateResult(this.id)' id='れ'>
+      <img style="width: 108px;" >
+	  <img class="button" src="images/ME.png" alt="Image Button 1" onclick='updateResult(this.id)' id='め'>
+	  <img class="button" src="images/HE.png" alt="Image Button 1" onclick='updateResult(this.id)' id='へ'>
+      <img class="button" src="images/NE.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ね'>
+      <img class="button" src="images/TE.png" alt="Image Button 2" onclick='updateResult(this.id)' id='て'>
+	  <img class="button" src="images/SE.png" alt="Image Button 3" onclick='updateResult(this.id)' id='せ'>
+	  <img class="button" src="images/KE.png" alt="Image Button 4" onclick='updateResult(this.id)' id='け'>
+	  <img class="button" src="images/E.png" alt="Image Button 5" onclick='updateResult(this.id)' id='え'>	 
+	  <img style="width: 108px;" > 
+	  <img class="button" src="images/n10.png" alt="Image Button 3" onclick='updateResult(this.id)' id='10'>
+	   <img style="width: 108px;" >
+      
+      
+      <img style="width: 108px;" >
+
+      <img class="button" src="images/N.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ん'>
+	  <img class="button" src="images/RO.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ろ'>
+	  <img class="button" src="images/YO.png" alt="Image Button 1" onclick='updateResult(this.id)' id='よ'>
+	  <img class="button" src="images/MO.png" alt="Image Button 1" onclick='updateResult(this.id)' id='も'>
+	  <img class="button" src="images/HO.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ほ'>
+      <img class="button" src="images/NO.png" alt="Image Button 1" onclick='updateResult(this.id)' id='の'>
+      <img class="button" src="images/TO.png" alt="Image Button 2" onclick='updateResult(this.id)' id='と'>
+	  <img class="button" src="images/SO.png" alt="Image Button 3" onclick='updateResult(this.id)' id='そ'>
+	  <img class="button" src="images/KO.png" alt="Image Button 4" onclick='updateResult(this.id)' id='こ'>
+	  <img class="button" src="images/O.png" alt="Image Button 5" onclick='updateResult(this.id)' id='お'>	  
+	  <img style="width: 108px;" >
+	 
+	  <!--  <img style="width: 108px;" > -->
+	 <img class="button" src="images/spacebar.png" alt="Image Button 3" onclick='updateResult(this.id)' id=' '>
+	  <img style="width: 108px;" >
+	   <img style="width: 108px;" >
+
+      <img class="button" src="images/s1.png" alt="Image Button 1" onclick='updateResult(this.id)' id='゛'>
+	  <img class="button" src="images/s2.png" alt="Image Button 1" onclick='updateResult(this.id)' id='。'>
+	  <img class="button" src="images/s3.png" alt="Image Button 1" onclick='updateResult(this.id)' id='-'>
+	  <img class="button" src="images/s4.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ゃ'>
+	  <img class="button" src="images/s5.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ょ'>
+      <img class="button" src="images/s6.png" alt="Image Button 1" onclick='updateResult(this.id)' id='ゅ'>
+      <img class="button" src="images/s7.png" alt="Image Button 2" onclick='updateResult(this.id)' id='っ'>
+	  <img class="button" src="images/s8.png" alt="Image Button 2" onclick='updateResult(this.id)' id='、'>
+      <img style="width: 108px;" >
+      <img style="width: 108px;" >
+      <img style="width: 108px;" >
+      <img style="width: 108px;" >  
+	  
+	  <img class="button" src="images/back_in_black.png" alt="Image Button 2" onclick='goBack()' id='back'>
+
+    </div>
+	
+	<script>		
+  	  	function updateResult(id) {
+
+  	    // Get the form field
+  	    var resultField = document.getElementById('input');
+
+  	    // Set the value of the form field to the id of the clicked button
+  	    resultField.value = resultField.value + id;
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = id;
+  	    msg.lang = 'ja';
+
+	}
+
+
+  	  function speak() {
+    	// Get the form field
+    	var utterance = document.getElementById('input');
+
+    	// Set the value of the form field to the id of the clicked button
+    	// resultField.value = id;
+
+  	var msg = new SpeechSynthesisUtterance();
+  	msg.text = utterance.value;
+  	msg.lang = 'ja';
+	msg.rate = 0.9;
+  
+  window.speechSynthesis.speak(msg);
+    }
+
+    function clearInput() {
+      const inputBox = document.getElementById("input");
+      inputBox.value = "";
+    }
+	
+	function goBack() {
+	  window.history.back();
+	}
+	
+		
+</script>
+			
+	<script src="script.js"></script>	  
+		
+  </body>
+</html>
