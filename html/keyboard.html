@@ -18,13 +18,13 @@
 
       .container {
         display: grid;
-        grid-template-columns: repeat(14, 1fr);
+        grid-template-columns: repeat(15, 1fr);
         grid-template-rows: repeat(6, 1fr);
         grid-row-gap: 2px;
         grid-column-gap: 2em;
         /* border-style: solid; */
         width: 100vw;
-        height: calc(100vh - 200px);
+        height: calc(100vh - 25vh);
         margin-left: 20px;
         justify-items: center;
         align-items: center;
@@ -49,30 +49,38 @@
           id="input"
           type="text"
           onkeyup="textUpdated(this)"
-          style="width: 80vw; font-size: 3em; height: 80px; margin-left: 20px"
+          style="
+            width: 80vw;
+            font-size: 3em;
+            height: 7vh;
+            margin-left: 20px;
+            margin-bottom: 0.2em;
+            background-color: rgb(255, 255, 255);
+            border-width: 1px;
+          "
         />
-        <br />
         <input
           autocomplete="on"
           id="input"
           type="text"
           onkeyup="textUpdated(this)"
-          style="width: 80vw; font-size: 3em; height: 40px; margin-left: 20px"
+          style="
+            width: 80vw;
+            font-size: 3em;
+            height: 4vh;
+            margin-left: 20px;
+            background-color: #eeee;
+            border-width: 1px;
+          "
         />
       </div>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button
-        onclick="speak()"
-        style="width: 110px; height: 105px; border-style: solid"
-      >
-        <img src="images/speak.png" style="height: 100px; width: 100px" />
+      <button onclick="speak()" style="">
+        <img src="images/speak.png" style="height: 9vh; width: 5vw" />
       </button>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button
-        onclick="clearInput()"
-        style="width: 110px; height: 105px; border-style: solid"
-      >
-        <img src="images/clear.png" style="height: 100px; width: 100px" />
+      <button onclick="clearInput()" style="">
+        <img src="images/clear.png" style="height: 9vh; width: 5vw" />
       </button>
     </div>
 
@@ -150,6 +158,7 @@
         id="あ"
       />
       <!--       <img style=";" > -->
+      <img style="" />
       <img
         class="button"
         src="images/n1.png"
@@ -216,6 +225,7 @@
         onclick="updateResult(this.id)"
         id="し"
       />
+      <img style="" />
       <img
         class="button"
         src="images/KI.png"
@@ -324,6 +334,7 @@
         id="う"
       />
       <!--       <img style=";" > -->
+      <img style="" />
       <img
         class="button"
         src="images/n7.png"
@@ -404,6 +415,7 @@
         onclick="updateResult(this.id)"
         id="え"
       />
+      <img style="" />
       <img style="" />
       <img
         class="button"
@@ -489,6 +501,7 @@
       <img style="" />
 
       <!--  <img style=";" > -->
+      <img style="" />
       <img
         class="button"
         src="images/spacebar.png"
@@ -559,6 +572,8 @@
       <img style="" />
       <img style="" />
       <!-- <img style=";" >   -->
+      <img style="" />
+      <img style="" />
 
       <img
         class="button"

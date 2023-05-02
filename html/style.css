@@ -56,10 +56,7 @@ div {
   flex-direction: column;
 }
 .row {
-  align-items: center;
-  width: 100vw;
-  background-color: blue;
-  overflow: hidden;
+margin-top: 40px;
 }
 /* .container {
   height: 100vh;
