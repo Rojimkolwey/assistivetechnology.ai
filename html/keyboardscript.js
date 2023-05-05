@@ -1,6 +1,7 @@
 const searchInput = document.querySelector(".search");
 const resultsWrapper = document.querySelector(".search-results");
 const buttonImgs = document.querySelectorAll(".button");
+const spansResults = document.querySelectorAll(".word-result");
 
 let allWords = [];
 
@@ -21,21 +22,7 @@ readTextFile("./words.txt");
 
 let allWordsArr = allWords.split("\n");
 
-buttonImgs.forEach((buttonImg) => {
-  buttonImg.addEventListener("click", () => {
-    let results = [];
-    let input = searchInput.value;
-    if (input.length) {
-      results = allWordsArr.filter((item) => {
-        return item.toLowerCase().includes(input.toLowerCase());
-      });
-    }
-
-    renderResults(results);
-  });
-});
-
-searchInput.addEventListener("keyup", (e) => {
+const resultsSearch = () => {
   let results = [];
   let input = searchInput.value;
   if (input.length) {
@@ -45,7 +32,19 @@ searchInput.addEventListener("keyup", (e) => {
   }
 
   renderResults(results);
+};
+
+buttonImgs.forEach((buttonImg) => {
+  buttonImg.addEventListener("click", () => {
+    resultsSearch();
+  });
 });
+
+searchInput.addEventListener("keyup", (e) => {
+  resultsSearch();
+});
+
+let resultsSubArr = [];
 
 function renderResults(results) {
   console.log("results", results);
@@ -53,8 +52,6 @@ function renderResults(results) {
   if (!results.length) {
     return resultsWrapper.classList.remove("show");
   }
-
-  let resultsSubArr = [];
 
   if (results.length > 5) {
     console.log("creating subarrray", results);
@@ -66,11 +63,16 @@ function renderResults(results) {
   console.log(resultsSubArr);
 
   let content = resultsSubArr
-    .map((item) => {
-      return `<span class="word-result">${item}</span>`;
+    .map((item, index) => {
+      return `<span class="word-result" onClick = "addResult(${index})">${item}</span>`;
     })
     .join(" ");
 
   resultsWrapper.classList.add("show");
   resultsWrapper.innerHTML = content;
 }
+
+const addResult = (index) => {
+  console.log("Clicked", resultsSubArr[index]);
+  searchInput.value = resultsSubArr[index];
+};
