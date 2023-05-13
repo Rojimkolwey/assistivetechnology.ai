@@ -81,7 +81,7 @@ html {
 }
 .child img {
   height: 50% !important;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
 }
 
 .child:hover{
@@ -134,7 +134,7 @@ a {
   font-weight: bold;
 }
 
-.cross-hair{
+/* .cross-hair{
 position: absolute;
 top: 50%; right: 50%;
   transform: translate(50%,-50%);
@@ -142,7 +142,7 @@ top: 50%; right: 50%;
   height: 30px;
   width: 30px;
  
-}
+} */
 /* 
 @media only screen and (min-width: 2500px) {
   .parent {
