@@ -62,12 +62,14 @@ html {
   background-color: yellow;
   padding-top: 5px;
   padding-bottom: 10px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2px;
+  position: relative;
+
 }
 .control br{
   display: none;
@@ -79,19 +81,23 @@ html {
 }
 .child img {
   height: 50% !important;
-  padding-bottom: 2px;
+  padding-bottom: 5px;
 }
 
 .child:hover{
   border-color: blue !important;
   border-width: thick; 
-  cursor: url("./images/cross-hair2.svg"), auto;
+  opacity: 0.9;
+  /* cursor: url("./images/cross-hair2.svg"), auto; */
 
+}
+.child:hover .cross-hair{
+  opacity: 1;
 }
 .control:hover{
   border-color: blue !important;
   border-width: thick; 
-  cursor: url("./images/cross-hair2.svg"), auto;
+  /* cursor: url("./images/cross-hair2.svg"), auto; */
 }
 
 
@@ -126,6 +132,16 @@ h1 {
 a {
   text-decoration: none;
   font-weight: bold;
+}
+
+.cross-hair{
+position: absolute;
+top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  opacity: 0;
+  height: 30px;
+  width: 30px;
+ 
 }
 /* 
 @media only screen and (min-width: 2500px) {

@@ -20,6 +20,7 @@
 	
 	
 	<div class="parent" style="text-align: center;">
+
 		
 <a href="chatting.html" id="チャット"  onclick='updateResult(this.id)'><div class="child" style="border-style: solid; border-color: black;"><img src="images/chatting.png" style="height: 50%;">チャット</div></a>
 <a href="#" id="あいさつ"  onclick='updateResult(this.id)'> <div class="child" style="border-style: dashed; border-color: black;"><img src="images/hello.png" style="height: 50%;">あいさつ</div></a>
@@ -72,5 +73,23 @@ function goBack() {
   window.history.back();
 }
 </script>
+
+<script>
+const Childs = document.querySelectorAll(".child")
+
+Childs.forEach ((child) =>{
+	var img = document.createElement("img");
+
+img.src = "./images/cross-hair2.svg";
+img.classList.add("cross-hair")
+
+
+child.appendChild(img)
+})
+
+
+
+</script>
+
 		  </body>
 		</html>
