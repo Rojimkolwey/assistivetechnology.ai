@@ -67,6 +67,8 @@ div {
   justify-content: space-evenly;
   padding: 0 10px;
   border-radius: 10px;
+  font-weight: bold;
+
 }
 .show.search-results {
   opacity: 1;
@@ -76,4 +78,5 @@ div {
 .word-result {
   font-size: 25px;
   cursor: pointer;
+
 }

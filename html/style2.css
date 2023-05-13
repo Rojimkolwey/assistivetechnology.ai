@@ -58,15 +58,33 @@ html {
   background-color: yellow;
   padding-top: 5px;
   padding-bottom: 10px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.control{
+  font-size: 1.2em !important;
+
+}
 .child img {
   height: 50% !important;
+margin-top: 20px;
 }
+
+.child:hover{
+  border-color: blue !important;
+  border-width: thick; 
+  cursor: url("./images/cross-hair2.svg"), auto;
+
+}
+.control:hover{
+  border-color: blue !important;
+  border-width: thick; 
+  cursor: url("./images/cross-hair2.svg"), auto;
+}
+
 
 .control {
   /*			border-style: solid;
