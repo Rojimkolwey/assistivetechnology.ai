@@ -127,9 +127,9 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
-
+/* 
 @media only screen and (min-width: 2500px) {
   .parent {
     font-size: 2em;
   }
-}
+} */
