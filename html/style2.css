@@ -48,6 +48,10 @@ html {
   /* overflow: hidden !important; */
 }
 
+.child br {
+  display: none;
+}
+
 .child {
   /*			border-style: solid;
 			border-color: black;*/
@@ -63,6 +67,11 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2px;
+}
+.control br{
+  display: none;
+
 }
 .control{
   font-size: 1.2em !important;
@@ -70,7 +79,7 @@ html {
 }
 .child img {
   height: 50% !important;
-margin-top: 20px;
+  padding-bottom: 2px;
 }
 
 .child:hover{
